@@ -4,4 +4,9 @@
     <string name="item1">item1</string>
     <string name="item2">item2</string>
     <string name="item3">item3</string>
+    <string name="item4">item4</string>
+    <string name="isChecked">item4 is checked</string>
+    <string name="checkBox1">Отобразить группу меню</string>
+    <string name="checkBox2">Отобразить пункт меню</string>
+
 </resources>

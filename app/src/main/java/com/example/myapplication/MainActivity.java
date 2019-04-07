@@ -10,9 +10,15 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CheckBox;
+import android.widget.Switch;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    CheckBox checkBox1;
+    CheckBox checkBox2;
+    MenuItem item1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +36,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        checkBox1 = findViewById(R.id.checkBox1);
+        checkBox2 = findViewById(R.id.checkBox2);
 
     }
+
+
     public static final String TAG = "myLogs";
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        item1 = menu.findItem(R.id.action_item1);
+        if (checkBox2.isChecked()){
+            item1.setVisible(true);
+        }
+        else {item1.setVisible(false);
+        }
+        menu.setGroupVisible(R.id.group1, checkBox1.isChecked());
+      return super.onPrepareOptionsMenu(menu);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        menu.add(2, 4, 4, "Item4").setCheckable(true);
         return true;
+
     }
 
     @Override
@@ -99,9 +123,14 @@ public class MainActivity extends AppCompatActivity {
                 toast4.setGravity(Gravity.BOTTOM, 0, 0);
                 toast4.show();
                 break;
+            case 4:
+                Log.d(TAG, "Pushed menu item4");
+                item.setChecked(!item.isChecked());
+                Toast toast5 = Toast.makeText(MainActivity.this, R.string.item4, Toast.LENGTH_LONG);
+                toast5.setGravity(Gravity.BOTTOM, 0, 0);
+                toast5.show();
+                break;
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 }
