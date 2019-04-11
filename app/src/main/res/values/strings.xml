@@ -8,5 +8,7 @@
     <string name="isChecked">item4 is checked</string>
     <string name="checkBox1">Отобразить группу меню</string>
     <string name="checkBox2">Отобразить пункт меню</string>
+    <string name="textView1">Text color</string>
+    <string name="textView2">Text size</string>
 
 </resources>

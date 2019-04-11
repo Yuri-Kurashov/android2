@@ -36,22 +36,44 @@
             android:id="@+id/checkBox1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="108dp"
-            android:layout_marginTop="209dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="460dp"
+            android:checked="true"
             android:text="@string/checkBox1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:checked="true"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="57dp"
+            android:checked="true"
             android:text="@string/checkBox2"
             app:layout_constraintStart_toStartOf="@+id/checkBox1"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox1"
-            android:checked="true"/>
+            app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:text="@string/textView2"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/textView1"
+            app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="79dp"
+            android:layout_marginTop="236dp"
+            android:text="@string/textView1"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.design.widget.CoordinatorLayout>
