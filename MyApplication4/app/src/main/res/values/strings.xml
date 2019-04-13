@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My Application4</string>
+    <string name="leftRbtn">Left</string>
+    <string name="centerRbtn">Center</string>
+    <string name="rightRbtn">Right</string>
+    <string name="button1">CREAT</string>
+    <string name="button2">CLEAN</string>
+    <string name="inputText1">hint</string>
+
+
+</resources>
