@@ -2,6 +2,7 @@ package com.example.myapplication4;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,8 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+
+    public static final String TAG = "myLogs";
 
     RadioGroup radioGroup;
     RadioButton leftRbtn;
@@ -27,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "Find views");
 
 
         radioGroup = findViewById(R.id.radioGroup);
@@ -51,12 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 int btnGravity = Gravity.LEFT;
                 switch (radioGroup.getCheckedRadioButtonId()) {
                     case R.id.leftRbtn:
+                        Log.d(TAG, "Pushed left rbtn");
                         btnGravity = Gravity.LEFT;
                         break;
                     case R.id.centerRbtn:
+                        Log.d(TAG, "Pushed centre rbtn");
                         btnGravity = Gravity.CENTER_HORIZONTAL;
                         break;
                     case R.id.rightRbtn:
+                        Log.d(TAG, "Pushed right rbtn");
                         btnGravity = Gravity.RIGHT;
                         break;
                 }
@@ -64,10 +72,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Button btnNew = new Button(this);
                 btnNew.setText(editText.getText().toString());
                 llmain.addView(btnNew, lparams);
+                btnNew.setId(View.generateViewId());
                 break;
 
             case R.id.button2:
                 llmain.removeAllViews();
+                editText.setText("");
+                Log.d(TAG, "Pushed clean btn");
                 Toast.makeText(MainActivity.this, "Deleted", Toast.LENGTH_SHORT).show();
                 break;
 
