@@ -3,10 +3,14 @@ package com.example.myapplication6;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textView;
 
     String oper = "";
+
+    final int MENU_RESET_ID = 1;
+    final int MENU_QUIT_ID = 2;
 
 
     @Override
@@ -37,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editText2 = findViewById(R.id.editText2);
 
         textView = findViewById(R.id.textView);
+
 
         plusBtn.setOnClickListener(this);
         minBtn.setOnClickListener(this);
@@ -78,10 +86,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button4:
                 oper = "/";
-                result = num1 / num2;
-                break;
+                if (num2 == 0 || num2 == 0.0) {
+                    Toast toast = Toast.makeText(MainActivity.this, "Делить на ноль нельзя", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0 );
+                    toast.show();
+                    break;
+                }
+                else {
+                    result = num1 / num2;
+                    break;
+                }
+
 
         }
+        textView.setText(num1 + "" + oper + "" + num2 + "=" + result);
 
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.add(0, MENU_RESET_ID, 0, "Reset");
+        menu.add(0, MENU_QUIT_ID, 0, "Quit");
+
+        return super.onCreateOptionsMenu(menu);
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case MENU_RESET_ID :
+                editText1.setText("");
+                editText2.setText("");
+                textView.setText("");
+                break;
+            case MENU_QUIT_ID:
+                finish();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
