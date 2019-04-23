@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">AnimationApp</string>
     <string name="textView">TextView</string>
+    <string name="toNextActBtn">Change activity</string>
+    <string name="textV2act">Activity №2</string>
+
 
 </resources>
