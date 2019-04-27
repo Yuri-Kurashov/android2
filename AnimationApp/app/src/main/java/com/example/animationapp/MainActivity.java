@@ -5,12 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -136,6 +138,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case MENU_COMBO_ID:
                 anim = AnimationUtils.loadAnimation(this, R.anim.mycombo);
+                Toast toast = Toast.makeText(this, "Starting combo", Toast.LENGTH_LONG);toast.setGravity(Gravity.BOTTOM, 0, 0);
+                toast.setGravity(Gravity.BOTTOM, 0 , 0 );
+                toast.show();
                 break;
         }
         textView.startAnimation(anim);
