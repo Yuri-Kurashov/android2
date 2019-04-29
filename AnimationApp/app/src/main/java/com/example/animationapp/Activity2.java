@@ -12,13 +12,13 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
     private static final String TAG = "myLogs";
     private static final String TAG2 = "lifeCicle";
 
-    Button chageActbtn2;
+    Button chageActbtn2, button5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG2, "Активити создано");
+        Log.d(TAG2, "Активити2 создано");
 
 
         setContentView(R.layout.activity_2);
@@ -26,7 +26,9 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
         Log.d(TAG, "Finded view in activity 2");
 
         chageActbtn2 = findViewById(R.id.button2);
+        button5 = findViewById(R.id.button5);
         chageActbtn2.setOnClickListener(this);
+        button5.setOnClickListener(this);
 
     }
 
@@ -37,6 +39,10 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
             case R.id.button2:
                 Intent intent2 = new Intent(this, MainActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.button5:
+                Intent intent5 = new Intent(this, Activity3.class);
+                startActivity(intent5);
                 break;
             default:
                 break;
@@ -49,33 +55,39 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG2, "Активити становится видимым");
+        Log.d(TAG2, "Активити2 запускается");
 
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        Log.d(TAG2, "Активити получает фокус");
+        Log.d(TAG2, "Активити2 получает фокус");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG2, "Активити приостановлено");
+        Log.d(TAG2, "Активити2 приостановлено");
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG2, "Активити остановлено");
+        Log.d(TAG2, "Активити2 остановлено");
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG2, "Активити2 перезапускается");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG2, "Активити уничтожено");
+        Log.d(TAG2, "Активити2 уничтожено");
     }
 }
