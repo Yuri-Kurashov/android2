@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,6 +13,8 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
 
     Button button3, button4;
     private static final String TAG2 = "lifeCicle";
+    final int OPT_MENU_A1 = 1;
+    final int OPT_MENU_A2 = 2;
 
 
     @Override
@@ -80,5 +84,35 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
     protected void onDestroy() {
         super.onDestroy();
         Log.d(TAG2, "Активити3 уничтожено");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        menu.add(1, OPT_MENU_A1, 1, "Activity 1");
+        menu.add(1, OPT_MENU_A2, 1, "Activity 2");
+
+        return super.onCreateOptionsMenu(menu);
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+            case OPT_MENU_A1:
+                Intent intent3 = new Intent(this, MainActivity.class);
+                startActivity(intent3);
+                break;
+            case OPT_MENU_A2:
+                Intent intent4 = new Intent(this, Activity2.class);
+                startActivity(intent4);
+                break;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+
     }
 }

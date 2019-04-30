@@ -6,6 +6,7 @@
     <string name="toNextActBtn3">Start activity3</string>
     <string name="textV2act">Activity №2</string>
     <string name="textV3act">Activity №3</string>
+    <string name="TextV_Ch_Act">Change Activity</string>
 
 
 </resources>
