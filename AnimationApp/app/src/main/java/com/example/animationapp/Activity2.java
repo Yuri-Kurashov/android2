@@ -26,7 +26,7 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d(TAG2, "Активити2 создано");
+        Log.d(TAG2, "Activity2 onCreate");
 
 
         setContentView(R.layout.activity_2);
@@ -65,40 +65,40 @@ public class Activity2 extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG2, "Активити2 запускается");
+        Log.d(TAG2, "Activity2 onStart");
 
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        Log.d(TAG2, "Активити2 получает фокус");
+        Log.d(TAG2, "Activity2 onPostResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG2, "Активити2 приостановлено");
+        Log.d(TAG2, "Activity2 onPause");
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG2, "Активити2 остановлено");
+        Log.d(TAG2, "Activity2 onStop");
 
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG2, "Активити2 перезапускается");
+        Log.d(TAG2, "Activity2 onRestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG2, "Активити2 уничтожено");
+        Log.d(TAG2, "Activity2 onDistroy");
     }
 
     @Override

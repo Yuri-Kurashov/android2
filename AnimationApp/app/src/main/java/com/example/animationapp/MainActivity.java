@@ -17,6 +17,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "myLogs";
+    private static final String TAG2 = "lifeCicle";
+
 
     TextView textView, textV_Ch_Act;
 
@@ -36,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG2, "MainActivity onCreate");
 
         Log.d(TAG, "Finded view in main activity");
 
@@ -120,5 +124,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
         }
+    }
+
+    @Override
+    protected void onStart() {
+        Log.d(TAG2, "MainActivity onStart");
+        super.onStart();
+    }
+
+    @Override
+    protected void onPostResume() {
+        Log.d(TAG2, "MainActivity onPostResume");
+        super.onPostResume();
+    }
+
+    @Override
+    protected void onPause() {
+        Log.d(TAG2, "MainActivity onPause");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        Log.d(TAG2, "MainActivity onStop");
+        super.onStop();
+    }
+
+    @Override
+    protected void onRestart() {
+        Log.d(TAG2, "MainActivity onRestert");
+        super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        Log.d(TAG2, "MainActivity onDestroy");
+        super.onDestroy();
     }
 }

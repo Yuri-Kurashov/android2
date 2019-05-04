@@ -21,7 +21,7 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_3);
-        Log.d(TAG2, "Активити3 создано");
+        Log.d(TAG2, "Activity3 onCreate");
         button3 = findViewById(R.id.button3);
         button4 = findViewById(R.id.button4);
 
@@ -50,40 +50,40 @@ public class Activity3 extends AppCompatActivity implements View.OnClickListener
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG2, "Активити3 запускается");
+        Log.d(TAG2, "Activity3 onStart");
 
     }
 
     @Override
     protected void onPostResume() {
         super.onPostResume();
-        Log.d(TAG2, "Активити3 получает фокус");
+        Log.d(TAG2, "Activity3 onPostResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG2, "Активити3 приостановлено");
+        Log.d(TAG2, "Activity3 onPause");
 
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG2, "Активити3 остановлено");
+        Log.d(TAG2, "Activity3 onStop");
 
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d(TAG2, "Активити3 перезапускается");
+        Log.d(TAG2, "Activity3 onRestart");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG2, "Активити3 уничтожено");
+        Log.d(TAG2, "Activity3 onDestroy");
     }
 
     @Override
