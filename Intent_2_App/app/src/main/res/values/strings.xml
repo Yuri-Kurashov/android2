@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Intent_2_App</string>
+    <string name="btnTime">Time</string>
+    <string name="btnDate">Date</string>
+    <string name="textView">Time / Date</string>
+    <string name="textView2"></string>
+</resources>
