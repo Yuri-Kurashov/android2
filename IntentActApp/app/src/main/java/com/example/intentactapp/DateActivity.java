@@ -22,7 +22,7 @@ public class DateActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.textView);
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.YYYY");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.mm.yyyy");
         String date = sdf.format(new Date(System.currentTimeMillis()));
 
         textView.setText(date);

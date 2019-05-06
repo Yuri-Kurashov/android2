@@ -2,8 +2,10 @@
     <string name="app_name">IntentActApp</string>
     <string name="buttonTime">Time</string>
     <string name="buttonDate">Date</string>
+    <string name="btnToMain">to Main Activity</string>
     <string name="tvMainAct">Time/Date</string>
     <string name="title_activity_time">TimeActivity</string>
     <string name="title_activity_date">DateActivity</string>
     <string name="texView">time/date</string>
+    <string name="tvDuble">Duble Ativity/date</string>
 </resources>

@@ -26,6 +26,8 @@ public class TimeActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
         String time = sdf.format(new Date(System.currentTimeMillis()));
 
+
+
         textView.setText(time);
 
 
