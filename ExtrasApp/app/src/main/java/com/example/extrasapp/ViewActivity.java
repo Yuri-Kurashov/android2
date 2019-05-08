@@ -3,26 +3,30 @@ package com.example.extrasapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.widget.TextView;
 
 public class ViewActivity extends AppCompatActivity {
 
-    TextView textViewж;
+    TextView textView, textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view);
 
-        textViewж = findViewById(R.id.textView);
+        textView = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView2);
+
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
+        String id = intent.getStringExtra("id");
 
-        textViewж.setText(name);
+        textView.setText(name);
+        textView2.setText(id);
 
-//        Intent intent = getIntent();
-//        String name = intent.getStringExtra("name");
-//        textViewж.setText(name);
+        int idInt = Integer.parseInt(id);
+
     }
 }
