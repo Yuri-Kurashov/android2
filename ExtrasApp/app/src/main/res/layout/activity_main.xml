@@ -22,25 +22,46 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginBottom="35dp"
-        android:ems="10"
+        android:autofillHints=""
         android:hint="@string/editText"
+        android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/blank"
         app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintStart_toStartOf="@+id/editText2"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="@+id/editText2" />
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
-        android:layout_marginTop="208dp"
-        android:ems="10"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="20dp"
+        android:autofillHints=""
         android:hint="@string/editText2"
+        android:ems="10"
         android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/getResBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/blank"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/getResBtn"
+        app:layout_constraintStart_toStartOf="@+id/editText2" />
+
+    <Button
+        android:id="@+id/getResBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="@string/resultBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
 </android.support.constraint.ConstraintLayout>

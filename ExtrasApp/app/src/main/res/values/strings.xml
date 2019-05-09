@@ -2,7 +2,11 @@
     <string name="app_name">ExtrasApp</string>
     <string name="editText">Name</string>
     <string name="editText2">id</string>
+    <string name="edtexResult">Result</string>
     <string name="blank"></string>
     <string name="submitBtn">Submit</string>
+    <string name="okBtn">Ok</string>
+    <string name="resultBtn">Result</string>
     <string name="textView"></string>
+
 </resources>
