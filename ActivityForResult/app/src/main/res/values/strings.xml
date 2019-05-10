@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ActivityForResult</string>
+    <string name="tvHelloWord">Hello Word</string>
+    <string name="btnColor">Color</string>
+    <string name="btnAlignment">Alignment</string>
+    <string name="btnRed">Red</string>
+    <string name="btnGreen">Green</string>
+    <string name="btnBlue">Blue</string>
+    <string name="btnLeft">Set left</string>
+    <string name="btnCenter">Set center</string>
+    <string name="btnRight">Set right</string>
+</resources>
