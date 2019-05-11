@@ -33,4 +33,15 @@
         android:text="@string/btnRight"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnCenter"
         app:layout_constraintStart_toEndOf="@+id/btnCenter" />
+
+    <TextView
+        android:id="@+id/tvHoldMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="248dp"
+        android:text="@string/tvHoldMe"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

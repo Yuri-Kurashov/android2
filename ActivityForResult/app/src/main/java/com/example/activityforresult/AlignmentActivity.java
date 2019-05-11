@@ -4,21 +4,29 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class AlignmentActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "myLogs";
 
+    final int MENU_ITEM_TO_MAIN = 1;
+
     Button btnLeft, btnCenter, btnRight;
+    TextView tvHoldMe;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alignment);
+
+       tvHoldMe = findViewById(R.id.tvHoldMe);
 
         btnLeft = findViewById(R.id.btnLeft);
         btnCenter = findViewById(R.id.btnCenter);
@@ -27,6 +35,8 @@ public class AlignmentActivity extends AppCompatActivity implements View.OnClick
         btnLeft.setOnClickListener(this);
         btnCenter.setOnClickListener(this);
         btnRight.setOnClickListener(this);
+
+        registerForContextMenu(tvHoldMe);
     }
 
     @Override
@@ -49,5 +59,25 @@ public class AlignmentActivity extends AppCompatActivity implements View.OnClick
         }
         setResult(RESULT_OK, intent);
         finish();
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.add(0, MENU_ITEM_TO_MAIN, 0, "Main");
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+
+        Intent intent;
+
+        switch (item.getItemId()){
+            case MENU_ITEM_TO_MAIN:
+                intent = new Intent(AlignmentActivity.this, MainActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onContextItemSelected(item);
     }
 }
