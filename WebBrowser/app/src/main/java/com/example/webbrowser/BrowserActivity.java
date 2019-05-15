@@ -15,6 +15,8 @@ public class BrowserActivity extends AppCompatActivity {
 
         WebView webView = findViewById(R.id.webView);
 
+
+
         Uri data = getIntent().getData();
         webView.loadUrl(data.toString());
 
