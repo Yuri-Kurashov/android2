@@ -3,4 +3,6 @@
     <string name="btnAdd">Add</string>
     <string name="btnRead">Read</string>
     <string name="btnClear">Clear</string>
+    <string name="btnUpdate">Update</string>
+    <string name="btnDelete">Delete</string>
 </resources>

@@ -17,6 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String KEY_EMAIL = "email";
 
 
+
     public DBHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }

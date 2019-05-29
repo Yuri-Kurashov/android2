@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SQLite_Countries</string>
+    <string name="btnAll">Все записи</string>
+    <string name="btnFunction">Функция</string>
+    <string name="btnPopUp">Население ></string>
+    <string name="btnPopByReg">Наседеление по регону</string>
+    <string name="btnByRegUp">Население по региону ></string>
+    <string name="btnSort">Сортировка</string>
+    <string name="rbtnName">Наименование</string>
+    <string name="rbtnPop">Население</string>
+    <string name="rbtnReg">Регион</string>
+</resources>
