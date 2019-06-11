@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ContentValues contentValues = new ContentValues();
 
 
+
+
         switch (v.getId()) {
             case R.id.btnAdd:
                 contentValues.put(dbHelper.KEY_NAME, name);
@@ -81,7 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 database.delete(DBHelper.TABLE_CONTACTS,null, null);
                 break;
             case R.id.btnUpdate:
-                if(name.equalsIgnoreCase("")) {
+                if(TextUtils.isEmpty(name)){
+//                if(name.equalsIgnoreCase(""))
                     break;
                 }
                 contentValues.put(DBHelper.KEY_NAME, name);

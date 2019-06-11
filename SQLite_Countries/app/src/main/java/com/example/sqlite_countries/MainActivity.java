@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     String[] name = { "Китай", "США", "Бразилия", "Россия", "Япония", "Германия", "Египед",
             "Италия", "Франция", "Канада" };
-    int[] peaple = { 1400, 311, 195, 142, 128, 82, 80, 60, 66, 35};
+    int[] people = { 1400, 311, 195, 142, 128, 82, 80, 60, 66, 35};
     String[] region = { "Азия", "Америка", "Америка", "Европа", "Азия", "Европа", "Африка",
             "Европа", "Европа", "Америка" };
 
@@ -72,11 +72,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ContentValues contentValues = new ContentValues();
             for(int i = 0; i <10; i++) {
              contentValues.put("name", name[i]);
-             contentValues.put("people", peaple[i]);
+             contentValues.put("people", people[i]);
              contentValues.put("region", region[i]);
+             Log.d(TAG, "id = " + db.insert("myTable", null, contentValues));
             }
+            Log.d(TAG, "данные занесены в таблицу");
+        } else {
+            Log.d(TAG, "Данные есть в таблице");
         }
         cursor.close();
+        dbHelper.close();
         onClick(btnAll);
     }
 
@@ -146,21 +151,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
                 cursor = db.query("myTable", null, null, null,null,
-                        null, null);
+                        null, orderBy);
+                break;
         }
         if(cursor != null) {
+            Log.d(TAG, "Cursor != null");
             if(cursor.moveToFirst()) {
                 String str;
                 do {
                     str = "";
                     for(String cn : cursor.getColumnNames()) {
-                        str = str.concat(cn + " = " + cursor.getString(cursor.getColumnIndex(cn) + ";b"));
+                        str = str.concat(cn + " = "
+                                + cursor.getString(cursor.getColumnIndex(cn)) + "; ");
                     }
-                }
+                    Log.d(TAG, str);
+                } while (cursor.moveToNext());
+            } else {
+                Log.d(TAG, "Cursor does not move to first");
             }
-        }
-        cursor.close();
+            cursor.close();
+        } else
+            Log.d(TAG, "Cursor is null");
 
+        dbHelper.close();
     }
 
 
