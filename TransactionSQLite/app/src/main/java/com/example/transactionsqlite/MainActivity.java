@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Long startTime = System.currentTimeMillis();
         insertRecords();
         Long diff = System.currentTimeMillis() - startTime;
-        textView.setText("Time " + Long.toString(diff) + " ms");
+
 
     }
 
