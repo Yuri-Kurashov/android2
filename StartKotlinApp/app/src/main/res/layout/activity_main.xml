@@ -15,6 +15,13 @@
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.142" app:layout_constraintVertical_bias="0.726"/>
     <Button
+            android:text="Random"
+            android:onClick="randomMe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/randomBtn"
+            app:layout_constraintBaseline_toBaselineOf="@+id/countBtn" android:layout_marginStart="21dp"
+            app:layout_constraintStart_toEndOf="@+id/countBtn"/>
+    <Button
             android:text="Count"
             android:onClick="countMe"
             android:layout_width="wrap_content"

@@ -1,5 +1,6 @@
 package com.example.startkotlinapp
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
@@ -26,6 +27,15 @@ class MainActivity : AppCompatActivity() {
         var count: Int = Integer.parseInt(countString)
         count++
         textView.text = count.toString()
+    }
 
+    fun randomMe (view: View) {
+        val randomIntent = Intent(this, SecondActivity::class.java)
+        val countString = textView.text.toString()
+        val count = Integer.parseInt(countString)
+        randomIntent.putExtra(SecondActivity.TOTAL_COUNT,count)
+
+
+        startActivity(randomIntent)
     }
 }
