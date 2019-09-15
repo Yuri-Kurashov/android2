@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">testAppJava</string>
+    <string name="btn1">Button</string>
+    <string name="btn2">Button</string>
+</resources>
